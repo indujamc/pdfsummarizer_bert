@@ -16,7 +16,7 @@ if st.button("Summarize"):
     if text_input.strip():  # Check if text_input has content
         try:
             # Generate summary using the model
-            summary = model(text_input)  # Use the model directly on text_input
+            summary = model(text_input)  # Use the model instance directly on text_input
             
             # Display the summarized text
             st.write("## Summarized Text")
