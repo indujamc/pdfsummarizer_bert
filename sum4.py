@@ -14,11 +14,16 @@ text_input = st.text_area("Text to summarize")
 
 # Check if there's input to summarize
 if st.button("Summarize"):
-    # Generate the summary using the Summarizer model
-    if text_input.strip():  # Check if there's non-empty input
-        summary = model(text_input)
-        # Display the summarized text
-        st.write("## Summarized Text")
-        st.write(summary)
+    # Ensure text_input is not empty
+    if text_input.strip():
+        try:
+            # Generate the summary using the Summarizer model
+            summary = model(text_input)
+            
+            # Display the summarized text
+            st.write("## Summarized Text")
+            st.write(summary)
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
     else:
         st.warning("Please enter some text to summarize.")
