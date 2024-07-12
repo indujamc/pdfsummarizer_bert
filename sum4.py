@@ -18,7 +18,7 @@ if st.button("Summarize"):
     if text_input.strip():
         try:
             # Generate the summary using the Summarizer model
-            summary = model(text_input)
+            summary = model.predict(text_input)
             
             # Display the summarized text
             st.write("## Summarized Text")
