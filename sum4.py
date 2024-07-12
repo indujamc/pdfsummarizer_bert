@@ -20,7 +20,7 @@ if st.button("Summarize"):
             
             # Display the summarized text
             st.write("## Summarized Text")
-            st.write(f"<div style='font-family: Arial;'> {''.join(summary)} </div>", unsafe_allow_html=True)
+            st.write(summary)
         except Exception as e:
             st.error(f"Error: {e}")
     else:
